@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Weather App</string>
+
+    <!-- Hints and Labels -->
+    <string name="label_city">%s</string>
+    <string name="label_country">%s</string>
+    <string name="label_temp">%s°C</string>
+    <string name="label_feels_like">Feels Like: %s°C</string>
+    <string name="label_humidity">Humidity: %s%%</string>
+    <string name="label_pressure">Pressure: %s hPa</string>
+    <string name="label_sunrise">Sunrise: %s</string>
+    <string name="label_sunset">Sunset: %s</string>
+    <string name="label_wind">Wind: %s m/s</string>
+    <string name="label_weather_description">%s</string>
+    <string name="label_temp_min">Min:%s°C</string>
+    <string name="label_temp_max">Max:%s°C</string>
+    <string name="enter_city_name">Enter City Name</string>
+    <string name="search">Search</string>
+    <string name="enter_country_code">Enter country</string>
+
+    <!-- Default values when data is not available -->
+    <string name="city_n_a">Tel Aviv</string>
+    <string name="country_n_a">Israel</string>
+    <string name="feels_like_n_a">Feels Like:20°C</string>
+    <string name="temperature_n_a">25°C</string>
+    <string name="humidity_n_a">Humidity: 60%</string>
+    <string name="pressure_n_a">Pressure: 1013 hPa</string>
+    <string name="sunrise_n_a">Sunrise: 06:30</string>
+    <string name="sunset_n_a">Sunset: 18:00</string>
+    <string name="wind_speed_n_a">Wind Speed: 12 km/h</string>
+    <string name="weather_description_n_a">Clear Sky</string>
+    <string name="weather_icon_desc">Weather icon representing current conditions</string>
+
+
+    <!-- Loading and Errors -->
+    <string name="loading">Loading...</string>
+    <string name="error_fetch_weather">Failed to retrieve weather data</string>
+    <string name="error_city_not_found">City not found</string>
+    <string name="error_fetch_coordinates">Failed to fetch city coordinates</string>
+    <string name="error_no_data">No data found</string>
+    <string name="please_enter_city_country">Please enter city and country</string>
+    <string name="favorite_already_exists">%1$s is already in favorites!</string>
+    <string name="favorite_added">%1$s has been added to favorites!</string>
+    <string name="favorite_list_title">Favorite List</string>
+    <string name="Refresh">Refresh</string>
+
+
+    <!-- Dashboard -->
+    <string name="search_city">Search City</string>
+    <string name="weather_dashboard">Main Menu</string>
+    <string name="location_weather">Location Weather</string>
+    <string name="favorite">Favorite</string>
+    <string name="settings">Settings</string>
+    <!-- headers-->
+    <string name="local_weather">Local Weather</string>
+    <string name="city_search">City Search</string>
+    <string name="home">home</string>
+
+    <!-- Haim stuff-->
+    <string name="today">Today</string>
+    <string name="city">City</string>
+    <string name="temperature">Temperature</string>
+    <string name="description">Description</string>
+    <string name="max_c">Max: --°C</string>
+    <string name="min_c">Min: --°C</string>
+    <string name="feels_like_c">Feels like: --°C</string>
+    <string name="wind_km_h">Wind: -- km/h</string>
+    <string name="day">Day</string>
+    <string name="hour">Hour</string>
+    <string name="temp">Temp</string>
+    <!-- Haim stuff-->
+
+    <string name="save">Save</string>
+    <string name="delete">Delete</string>
+    <string name="edit">Edit</string>
+    <string name="type_note">Add a note here…</string>
+    <string name="note_saved">Note saved!</string>
+
+
+
+
+
+
+    <!-- תיאור האייקונים -->
+    <string name="sunrise_icon_desc">Sunrise icon</string>
+    <string name="sunset_icon_desc">Sunset icon</string>
+    <string name="humidity_icon_desc">Humidity icon</string>
+    <string name="wind_icon_desc">Wind icon</string>
+    <string name="precipitation_icon_desc">Precipitation icon</string>
+    <string name="visibility_icon_desc">Visibility icon</string>
+
+
+    <string-array name="favorite_sort_options">
+        <item>Alphabetical (A-Z)</item>
+        <item>Alphabetical (Z-A)</item>
+        <item>Temperature (Low to High)</item>
+        <item>Temperature (High to Low)</item>
+    </string-array>
+
+    <!-- Strings for the WeatherDetails UI -->
+    <string name="weather_background_desc">Weather background gradient</string>
+    <string name="hourly_forecast_title">Hourly Forecast</string>
+    <string name="details">Details</string>
+
+
+</resources>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">אפליקציית מזג אוויר</string>
+
+    <!-- Hints and Labels -->
+    <string name="label_city">%s</string>
+    <string name="label_country">%s</string>
+    <string name="label_temp">%s°C</string>
+    <string name="label_feels_like">מרגיש כמו: %s°C</string>
+    <string name="label_humidity">לחות: %s%%</string>
+    <string name="label_pressure">לחץ: %s hPa</string>
+    <string name="label_sunrise">זריחה: %s</string>
+    <string name="label_sunset">שקיעה: %s</string>
+    <string name="label_wind">רוח: %s קמ"ש</string>
+    <string name="label_weather_description">%s</string>
+    <string name="label_temp_min">מינימלית: %s°C</string>
+    <string name="label_temp_max">מקסימלית: %s°C</string>
+    <string name="enter_city_name">הזן שם עיר</string>
+    <string name="search">חפש</string>
+    <string name="enter_country_code">הזן מדינה</string>
+
+    <!-- Default values when data is not available -->
+    <string name="city_n_a">תל אביב</string>
+    <string name="country_n_a">ישראל</string>
+    <string name="feels_like_n_a">מרגיש כמו: 20°C</string>
+    <string name="temperature_n_a">25°C</string>
+    <string name="humidity_n_a">לחות: 60%</string>
+    <string name="pressure_n_a">לחץ: 1013 hPa</string>
+    <string name="sunrise_n_a">זריחה: 06:30</string>
+    <string name="sunset_n_a">שקיעה: 18:00</string>
+    <string name="wind_speed_n_a">רוח: 12 קמ"ש</string>
+    <string name="weather_description_n_a">שמיים בהירים</string>
+    <string name="weather_icon_desc">אייקון מזג אוויר המייצג את התנאים הנוכחיים</string>
+
+
+    <!-- Loading and Errors -->
+    <string name="loading">טוען...</string>
+    <string name="error_fetch_weather">נכשל באחזור נתוני מזג האוויר</string>
+    <string name="error_city_not_found">העיר לא נמצאה</string>
+    <string name="error_fetch_coordinates">נכשל באחזור נתוני המיקום</string>
+    <string name="error_no_data">לא נמצאו נתונים</string>
+    <string name="please_enter_city_country">אנא הזן עיר ומדינה</string>
+    <string name="favorite_already_exists">%1$s כבר קיימת במועדפים!</string>
+    <string name="favorite_added">%1$s נוספה למועדפים!</string>
+    <string name="favorite_list_title">רשימת מועדפים</string>
+    <string name="Refresh">רענן</string>
+
+    <!-- Dashboard -->
+    <string name="search_city">חיפוש עיר</string>
+    <string name="weather_dashboard">תפריט ראשי</string>
+    <string name="location_weather">מזג אוויר מקומי</string>
+    <string name="favorite">מועדפים</string>
+    <string name="settings">הגדרות</string>
+
+    <!-- headers-->
+    <string name="local_weather">מזג אוויר מקומי</string>
+    <string name="city_search">חיפוש עיר</string>
+    <string name="home">בית</string>
+
+    <!-- Haim stuff-->
+    <string name="today">היום</string>
+    <string name="city">עיר</string>
+    <string name="temperature">טמפרטורה</string>
+    <string name="description">תיאור</string>
+    <string name="max_c">מקסימום: --°C</string>
+    <string name="min_c">מינימום: --°C</string>
+    <string name="feels_like_c">מרגיש כמו: --°C</string>
+    <string name="wind_km_h">רוח: -- קמ"ש</string>
+    <string name="day">יום</string>
+    <string name="hour">שעה</string>
+    <string name="temp">טמ"פ</string>
+    <!-- Haim stuff-->
+
+
+    <string name="save">שמור</string>
+    <string name="delete">מחק</string>
+    <string name="edit">ערוך</string>
+    <string name="type_note">הוסף הערה כאן…</string>
+    <string name="note_saved">ההערה נשמרה!</string>
+
+
+
+
+
+
+
+    <!-- האייקונים שבפרטי המזג אוויר -->
+    <string name="sunrise_icon_desc">אייקון זריחה</string>
+    <string name="sunset_icon_desc"> אייקון שקיעה</string>
+    <string name="humidity_icon_desc">אייקון לחות</string>
+    <string name="wind_icon_desc">אייקון רוח</string>
+    <string name="precipitation_icon_desc">אייקון משקעים</string>
+    <string name="visibility_icon_desc">אייקון ראות</string>
+
+    <string-array name="favorite_sort_options">
+        <item>שמי עולה</item>
+        <item>שמי יורד</item>
+        <item>קר לחם</item>
+        <item>חם לקר</item>
+    </string-array>
+
+    <!-- Strings for the WeatherDetails UI -->
+    <string name="weather_background_desc">צבע רקע גרדיאנט</string>
+    <string name="hourly_forecast_title">תחזית שעתית</string>
+    <string name="details">פרטים</string>
+    <string name="info">מידע</string>
+
+
+</resources>

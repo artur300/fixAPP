@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/weatherLocalFragment">
+
+    <!-- Main Dashboard Fragment -->
+
+    <!-- City Search Fragment -->
+    <fragment
+        android:id="@+id/citySearchFragment"
+        android:name="com.example.weatherapp.ui.fragments.CitySearchFragment"
+        android:label="City Search">
+        <action
+            android:id="@+id/action_citySearchFragment_to_weatherLocalFragment"
+            app:destination="@id/weatherLocalFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left"
+            app:popUpTo="@id/weatherLocalFragment"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_citySearchFragment_to_weatherDetailsFragment"
+            app:destination="@id/weatherDetailsFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoritesFragment"
+        android:name="com.example.weatherapp.ui.fragments.FavoritesFragment"
+        android:label="FavoritesFragment" >
+        <action
+            android:id="@+id/action_favoritesFragment_to_weatherLocalFragment"
+            app:destination="@id/weatherLocalFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left"
+            app:popUpTo="@id/weatherLocalFragment"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_favoritesFragment_to_weatherDetailsFragment"
+            app:destination="@id/weatherDetailsFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/weatherLocalFragment"
+        android:name="com.example.weatherapp.ui.fragments.WeatherLocalFragment"
+        android:label="WeatherLocalFragment" >
+        <action
+            android:id="@+id/action_weatherLocalFragment_to_weatherSettingsFragment"
+            app:destination="@id/weatherSettingsFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+        <action
+            android:id="@+id/action_weatherLocalFragment_to_favoritesFragment"
+            app:destination="@id/favoritesFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+        <action
+            android:id="@+id/action_weatherLocalFragment_to_citySearchFragment"
+            app:destination="@id/citySearchFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/weatherSettingsFragment"
+        android:name="com.example.weatherapp.ui.fragments.WeatherSettingsFragment"
+        android:label="WeatherSettingsFragment" >
+        <action
+            android:id="@+id/action_weatherSettingsFragment_to_weatherLocalFragment"
+            app:destination="@id/weatherLocalFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left"
+            app:popUpTo="@id/weatherLocalFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/weatherDetailsFragment"
+        android:name="com.example.weatherapp.ui.fragments.WeatherDetailsFragment"
+        android:label="WeatherDetailsFragment" >
+        <action
+            android:id="@+id/action_weatherDetailsFragment_to_favoritesFragment"
+            app:destination="@id/favoritesFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left"
+            app:popUpTo="@id/favoritesFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_weatherDetailsFragment_to_citySearchFragment"
+            app:destination="@id/citySearchFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left"
+            app:popUpTo="@id/citySearchFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+</navigation>
+
