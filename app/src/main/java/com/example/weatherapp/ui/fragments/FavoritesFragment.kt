@@ -50,6 +50,21 @@ class FavoritesFragment : Fragment() {
         }
 
 
+//--------------------sort----------------------
+        var isAscending = true
+        binding.btnSortTemperature.setOnClickListener {
+            favoriteAdapter.sortFavoritesByTemperature(isAscending)
+            isAscending = !isAscending
+        }
+
+        var isCityNameAscending = true
+        binding.btnSortCityName.setOnClickListener {
+            favoriteAdapter.sortFavoritesByCityName(isCityNameAscending)
+            isCityNameAscending = !isCityNameAscending
+        }
+
+//--------------------sort----------------------
+
 
 
         binding.btnHome.setOnClickListener {

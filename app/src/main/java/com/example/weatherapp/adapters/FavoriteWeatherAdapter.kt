@@ -124,5 +124,43 @@ class FavoriteWeatherAdapter(
         favorites = newList
         notifyDataSetChanged()
     }
+
+
+
+
+
+
+
+
+
+
+
+
+//-------------sort functions-------------
+    fun sortFavoritesByTemperature(ascending: Boolean) {
+        favorites = if (ascending) {
+            favorites.sortedBy { it.temperature ?: Double.MIN_VALUE }
+        } else {
+            favorites.sortedByDescending { it.temperature ?: Double.MIN_VALUE }
+        }
+        notifyDataSetChanged()
+    }
+
+    fun sortFavoritesByCityName(ascending: Boolean) {
+        favorites = if (ascending) {
+            favorites.sortedBy { it.cityName.lowercase() }
+        } else {
+            favorites.sortedByDescending { it.cityName.lowercase() }
+        }
+        notifyDataSetChanged()
+    }
+
+
+
+
+
+
+
+
 }
 

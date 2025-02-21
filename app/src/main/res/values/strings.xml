@@ -102,6 +102,9 @@
     <string name="weather_background_desc">Weather background gradient</string>
     <string name="hourly_forecast_title">Hourly Forecast</string>
     <string name="details">Details</string>
+    <string name="info">Info</string>
+    <string name="sort_by_temperature">sort:Low To High / High To Low</string>
+    <string name="sort_by_city_name">sort:A To Z / Z To A</string>
 
 
 </resources>

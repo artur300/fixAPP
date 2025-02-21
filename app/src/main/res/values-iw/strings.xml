@@ -104,6 +104,8 @@
     <string name="hourly_forecast_title">תחזית שעתית</string>
     <string name="details">פרטים</string>
     <string name="info">מידע</string>
+    <string name="sort_by_temperature">מיון: מהנמוך לגבוה / מהגבוה לנמוך</string>
+    <string name="sort_by_city_name">מיון: מ-A עד Z / מ-Z עד A</string>
 
 
 </resources>
