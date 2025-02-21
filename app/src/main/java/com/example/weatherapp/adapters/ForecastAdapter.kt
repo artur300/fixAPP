@@ -46,20 +46,27 @@ class ForecastAdapter : RecyclerView.Adapter<ForecastAdapter.WeatherViewHolder>(
         val calendar = Calendar.getInstance()
         date?.let { calendar.time = it }
 
-        val days = arrayOf("Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat")
-        val dayOfWeek = days[calendar.get(Calendar.DAY_OF_WEEK) - 1]
-        val hour = calendar.get(Calendar.HOUR_OF_DAY)
+        val isHebrew = Locale.getDefault().language == "iw"
+        val daysEnglish = arrayOf("Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat")
+        val daysHebrew = arrayOf("ראשון", "שני", "שלישי", "רביעי", "חמישי", "שישי", "שבת")
 
+        val dayOfWeek = if (isHebrew) daysHebrew[calendar.get(Calendar.DAY_OF_WEEK) - 1]
+        else daysEnglish[calendar.get(Calendar.DAY_OF_WEEK) - 1]
+
+        val hour = calendar.get(Calendar.HOUR_OF_DAY)
         val iconCode = weatherData.weather[0].icon
         val iconResult = WeatherIconProvider.getWeatherIcon(iconCode)
 
+        val temperatureCelsius = weatherData.main.temp - 273.15
+
         holder.binding.apply {
             tvDay.text = dayOfWeek
-            tvHour.text = "${hour}:00"
-            tvTemperature.text = String.format(Locale.US, "%.0f°C", weatherData.main.temp)
+            tvHour.text = String.format("%02d:00", hour)
+            tvTemperature.text = String.format(Locale.US, "%.1f°C", temperatureCelsius)
             imgWeatherIcon.setImageResource(iconResult)
         }
     }
+
 
     override fun getItemCount() = differ.currentList.size
 }

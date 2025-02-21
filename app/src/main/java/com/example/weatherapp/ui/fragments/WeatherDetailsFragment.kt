@@ -68,16 +68,6 @@ class WeatherDetailsFragment : Fragment() {
             }
         }
 
-
-
-
-
-
-
-
-
-
-
     }
 
     private fun observeWeatherData() {
@@ -88,27 +78,25 @@ class WeatherDetailsFragment : Fragment() {
                     binding.progressBar.visibility = View.GONE
                     resource.data?.let { weather ->
                         with(binding) {
-                            tvTemperature.text = "${weather.main.temp}°C"
-                            tvFeelsLike.text = "Feels like: ${weather.main.feels_like}°C"
-                            tvHumidity.text = "Humidity: ${weather.main.humidity}%"
-                            tvWindSpeed.text = "Wind: ${weather.wind.speed} m/s"
-                            tvSunrise.text = "Sunrise: ${convertUnixToTime(weather.sys.sunrise, weather.timezone)}"
-                            tvSunset.text = "Sunset: ${convertUnixToTime(weather.sys.sunset, weather.timezone)}"
+                            tvTemperature.text = getString(R.string.weather_temp, weather.main.temp)
+                            tvFeelsLike.text = getString(R.string.weather_feels_like, weather.main.feels_like)
+                            tvHumidity.text = getString(R.string.weather_humidity, weather.main.humidity.toInt())
+                            tvWindSpeed.text = getString(R.string.weather_wind_speed, weather.wind.speed)
+                            tvSunrise.text = getString(R.string.weather_sunrise, convertUnixToTime(weather.sys.sunrise, weather.timezone))
+                            tvSunset.text = getString(R.string.weather_sunset, convertUnixToTime(weather.sys.sunset, weather.timezone))
                             tvWeatherDescription.text = weather.weather.firstOrNull()?.description ?: "--"
-
                             val iconCode = weather.weather.firstOrNull()?.icon
                             ivWeatherIcon.setImageResource(WeatherIconProvider.getWeatherIcon(iconCode))
-
-                            tvMinMax.text = "High: ${weather.main.temp_max}° • Low: ${weather.main.temp_min}°"
-                            tvPrecipitation.text = "Precipitation: ${weather.rain?.oneHour ?: 0} mm"
-                            tvVisibility.text = "Visibility: ${(weather.visibility ?: 0) / 1000.0} km"
+                            tvMinMax.text = getString(R.string.weather_max_temp, weather.main.temp_max) + " • " + getString(R.string.weather_min_temp, weather.main.temp_min)
+                            tvPrecipitation.text = getString(R.string.weather_precipitation, weather.rain?.oneHour ?: 0.0)
+                            tvVisibility.text = getString(R.string.weather_visibility, (weather.visibility ?: 0) / 1000.0)
                         }
                         weatherViewModel.getForecast(weather.coord.lat, weather.coord.lon)
                     }
                 }
                 is Resource.Error -> {
                     binding.progressBar.visibility = View.GONE
-                    Toast.makeText(requireContext(), resource.message ?: "Error fetching weather", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(), getString(R.string.error_fetch_weather), Toast.LENGTH_SHORT).show()
                 }
             }
         }

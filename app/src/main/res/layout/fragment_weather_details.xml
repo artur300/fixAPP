@@ -30,7 +30,7 @@
             android:id="@+id/header_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Details"
+            android:text="@string/details2"
             android:textColor="@color/white"
             android:textSize="24sp"
             android:textStyle="bold"
@@ -93,7 +93,7 @@
                                 android:id="@+id/tvCity"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="City"
+                                android:text="@string/city2"
                                 android:textColor="@android:color/white"
                                 android:textSize="20sp"
                                 android:textStyle="bold" />
@@ -103,7 +103,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="2dp"
-                                android:text="Country"
+                                android:text="@string/country2"
                                 android:textColor="@android:color/white"
                                 android:textSize="16sp" />
                         </LinearLayout>
@@ -128,7 +128,7 @@
                                 android:id="@+id/tvTemperature"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="17.01"
+                                android:text="@string/Temp2"
                                 android:textColor="@android:color/white"
                                 android:textSize="40sp"
                                 android:textStyle="bold" />
@@ -147,7 +147,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="2dp"
-                                android:text="16.91"
+                                android:text="@string/feelslike2"
                                 android:textColor="@android:color/white"
                                 android:textSize="14sp" />
 
@@ -155,7 +155,7 @@
                                 android:id="@+id/tvMinMax"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="High 19° • Low 10°"
+                                android:text="@string/high_19_low_10"
                                 android:textColor="@android:color/white"
                                 android:textSize="14sp" />
                         </LinearLayout>
@@ -166,7 +166,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="4dp"
-                            android:text="few clouds"
+                            android:text="@string/description2"
                             android:textColor="@android:color/white"
                             android:textSize="16sp" />
 
@@ -221,7 +221,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="More Details"
+                        android:text="@string/more_details"
                         android:textColor="@android:color/white"
                         android:textSize="18sp"
                         android:textStyle="bold"
@@ -264,7 +264,7 @@
                                     android:id="@+id/tvSunrise"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Sunrise: 08:22"
+                                    android:text="@string/sunrise2"
                                     android:textColor="@android:color/white"
                                     android:textSize="18sp" />
                             </LinearLayout>
@@ -299,7 +299,7 @@
                                     android:id="@+id/tvSunset"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Sunset: 19:27"
+                                    android:text="@string/sunset2"
                                     android:textColor="@android:color/white"
                                     android:textSize="18sp" />
                             </LinearLayout>
@@ -343,7 +343,7 @@
                                     android:id="@+id/tvHumidity"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Humidity: 82%"
+                                    android:text="@string/humidity2"
                                     android:textColor="@android:color/white"
                                     android:textSize="18sp" />
                             </LinearLayout>
@@ -378,7 +378,7 @@
                                     android:id="@+id/tvWindSpeed"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Wind: 2.57 m/s"
+                                    android:text="@string/wind2"
                                     android:textColor="@android:color/white"
                                     android:textSize="18sp" />
                             </LinearLayout>
@@ -421,7 +421,7 @@
                                     android:id="@+id/tvPrecipitation"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Precip: 0.3 mm"
+                                    android:text="@string/precip2"
                                     android:textColor="@android:color/white"
                                     android:textSize="18sp" />
                             </LinearLayout>
@@ -456,7 +456,7 @@
                                     android:id="@+id/tvVisibility"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Visibility: 9.7 km"
+                                    android:text="@string/visibility"
                                     android:textColor="@android:color/white"
                                     android:textSize="18sp" />
                             </LinearLayout>

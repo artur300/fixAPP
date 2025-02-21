@@ -79,11 +79,6 @@
     <string name="note_saved">ההערה נשמרה!</string>
 
 
-
-
-
-
-
     <!-- האייקונים שבפרטי המזג אוויר -->
     <string name="sunrise_icon_desc">אייקון זריחה</string>
     <string name="sunset_icon_desc"> אייקון שקיעה</string>
@@ -91,13 +86,6 @@
     <string name="wind_icon_desc">אייקון רוח</string>
     <string name="precipitation_icon_desc">אייקון משקעים</string>
     <string name="visibility_icon_desc">אייקון ראות</string>
-
-    <string-array name="favorite_sort_options">
-        <item>שמי עולה</item>
-        <item>שמי יורד</item>
-        <item>קר לחם</item>
-        <item>חם לקר</item>
-    </string-array>
 
     <!-- Strings for the WeatherDetails UI -->
     <string name="weather_background_desc">צבע רקע גרדיאנט</string>
@@ -107,5 +95,35 @@
     <string name="sort_by_temperature">מיון: מהנמוך לגבוה / מהגבוה לנמוך</string>
     <string name="sort_by_city_name">מיון: מ-A עד Z / מ-Z עד A</string>
 
+    <!-- Weather Data temp Strings -->
+        <string name="details2">פרטים</string>
+        <string name="city2">עיר</string>
+        <string name="country2">מדינה</string>
+        <string name="Temp2">17.01</string>
+        <string name="feelslike2">מרגיש כמו: 16.91</string>
+        <string name="high_19_low_10">מקסימום 19° • מינימום 10°</string>
+        <string name="description2">מעט עננים</string>
+        <string name="more_details">פרטים נוספים</string>
+        <string name="sunrise2">זריחה: 08:22</string>
+        <string name="sunset2">שקיעה: 19:27</string>
+        <string name="humidity2">לחות: 82%</string>
+        <string name="wind2">רוח: 2.57 מ׳ לשנייה</string>
+        <string name="precip2">משקעים: 0.3 מ״מ</string>
+        <string name="visibility">ראות: 9.7 ק״מ</string>
+
+
+
+    <!-- מחרוזות למזג האוויר -->
+    <string name="weather_temp">%.1f°C</string>
+    <string name="weather_feels_like">מרגיש כמו: %.1f°C</string>
+    <string name="weather_humidity">לחות: %d%%</string>
+    <string name="weather_wind_speed">רוח: %.1f מ׳ לשנייה</string>
+    <string name="weather_sunrise">זריחה: %s</string>
+    <string name="weather_sunset">שקיעה: %s</string>
+    <string name="weather_description">%s</string>
+    <string name="weather_min_temp">מינימום: %.1f°C</string>
+    <string name="weather_max_temp">מקסימום: %.1f°C</string>
+    <string name="weather_precipitation">משקעים: %.1f מ״מ</string>
+    <string name="weather_visibility">ראות: %.1f ק״מ</string>
 
 </resources>

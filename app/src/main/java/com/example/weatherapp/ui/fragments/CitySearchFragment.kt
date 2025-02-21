@@ -59,24 +59,11 @@ class CitySearchFragment : Fragment() {
         setupSearchButton()    // מאזין לכפתור החיפוש
 
 
-
-
-
         binding.btnHome.setOnClickListener {
             Click_button_animation.scaleView(it) {
                 findNavController().popBackStack(R.id.weatherLocalFragment, false)
             }
         }
-
-
-
-
-
-
-
-
-
-
 
 //------------------go to more details screen-------------
         binding.btnDetails.setOnClickListener {
@@ -94,17 +81,6 @@ class CitySearchFragment : Fragment() {
             }
         }
 //------------------go to more details screen-------------
-
-
-
-
-
-
-
-
-
-
-
 
     }
 

@@ -77,11 +77,6 @@
     <string name="type_note">Add a note here…</string>
     <string name="note_saved">Note saved!</string>
 
-
-
-
-
-
     <!-- תיאור האייקונים -->
     <string name="sunrise_icon_desc">Sunrise icon</string>
     <string name="sunset_icon_desc">Sunset icon</string>
@@ -91,13 +86,6 @@
     <string name="visibility_icon_desc">Visibility icon</string>
 
 
-    <string-array name="favorite_sort_options">
-        <item>Alphabetical (A-Z)</item>
-        <item>Alphabetical (Z-A)</item>
-        <item>Temperature (Low to High)</item>
-        <item>Temperature (High to Low)</item>
-    </string-array>
-
     <!-- Strings for the WeatherDetails UI -->
     <string name="weather_background_desc">Weather background gradient</string>
     <string name="hourly_forecast_title">Hourly Forecast</string>
@@ -105,6 +93,41 @@
     <string name="info">Info</string>
     <string name="sort_by_temperature">sort:Low To High / High To Low</string>
     <string name="sort_by_city_name">sort:A To Z / Z To A</string>
+
+    <!-- Weather Data temp Strings -->
+    <string name="details2">Details</string>
+    <string name="city2">City</string>
+    <string name="country2">Country</string>
+    <string name="Temp2">17.01</string>
+    <string name="feelslike2">16.91</string>
+    <string name="high_19_low_10">High 19° • Low 10°</string>
+    <string name="description2">few clouds</string>
+    <string name="more_details">More Details</string>
+    <string name="sunrise2">Sunrise: 08:22</string>
+    <string name="sunset2">Sunset: 19:27</string>
+    <string name="humidity2">Humidity: 82%</string>
+    <string name="wind2">Wind: 2.57 m/s</string>
+    <string name="precip2">Precip: 0.3 mm</string>
+    <string name="visibility">Visibility: 9.7 km</string>
+
+
+
+        <!-- Weather Data Strings -->
+        <string name="weather_temp">%.1f°C</string>
+        <string name="weather_feels_like">Feels Like: %.1f°C</string>
+        <string name="weather_humidity">Humidity: %d%%</string>
+        <string name="weather_wind_speed">Wind: %.1f m/s</string>
+        <string name="weather_sunrise">Sunrise: %s</string>
+        <string name="weather_sunset">Sunset: %s</string>
+        <string name="weather_description">%s</string>
+        <string name="weather_min_temp">Min: %.1f°C</string>
+        <string name="weather_max_temp">Max: %.1f°C</string>
+        <string name="weather_precipitation">Precipitation: %.1f mm</string>
+        <string name="weather_visibility">Visibility: %.1f km</string>
+
+
+
+
 
 
 </resources>
