@@ -162,6 +162,11 @@ class WeatherLocalFragment : Fragment() {
             val iconCode = it.weather?.get(0)?.icon
             val iconResult = WeatherIconProvider.getWeatherIcon(iconCode)
 
+
+            // קבלת צבעים מתאימים לפי מזג האוויר
+            val (startColor, endColor) = WeatherIconProvider.getWeatherCardGradient(iconCode)
+
+
             with(binding) {
                 tvCity.text = it.name ?: getString(R.string.city_n_a)
                 tvTemperature.text = getString(R.string.weather_temp, (it.main?.temp ?: 0.0).toFloat())
@@ -171,6 +176,25 @@ class WeatherLocalFragment : Fragment() {
                 tvFeelsLike.text = getString(R.string.weather_feels_like, (it.main?.feels_like ?: 0.0).toFloat())
                 tvWind.text = getString(R.string.weather_wind_speed, (it.wind?.speed ?: 0.0).toFloat())
                 ivIconWeather.setImageResource(iconResult)
+
+
+
+
+                // שינוי רקע הכרטיסייה
+                val gradientDrawable = android.graphics.drawable.GradientDrawable(
+                    android.graphics.drawable.GradientDrawable.Orientation.TOP_BOTTOM,
+                    intArrayOf(
+                        ContextCompat.getColor(requireContext(), startColor),
+                        ContextCompat.getColor(requireContext(), endColor)
+                    )
+
+                )
+                gradientDrawable.cornerRadius = 50f  // עיגול פינות
+                binding.cardView.background = gradientDrawable
+
+                cardView.background = gradientDrawable
+
+
             }
         }
     }

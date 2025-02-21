@@ -36,8 +36,4 @@ object WeatherIconProvider {
         }
     }
 
-
-
-
-
 }

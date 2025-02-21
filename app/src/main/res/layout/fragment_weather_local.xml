@@ -164,7 +164,8 @@
                 app:cardElevation="6dp"
                 app:cardBackgroundColor="@color/dark_cyan"
                 android:padding="16dp"
-                android:layout_marginBottom="10dp">
+                android:layout_marginBottom="10dp"
+                >
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -176,8 +177,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/today"
-                        android:textColor="@color/white"
-                        android:gravity="end"
+                        android:textColor="@color/black"
+                        android:gravity="center"
+                        android:padding="5sp"
                         android:textStyle="bold"
                         android:textSize="16sp"/>
 
@@ -195,7 +197,7 @@
                         android:gravity="center"
                         android:textSize="30sp"
                         android:textStyle="bold"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:text="@string/city"/>
 
                     <TextView
@@ -205,7 +207,7 @@
                         android:gravity="center"
                         android:textSize="40sp"
                         android:textStyle="bold"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:text="@string/temperature"/>
 
                     <TextView
@@ -214,7 +216,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="@string/description"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:textSize="20sp"/>
 
                     <LinearLayout
@@ -228,7 +230,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/max_c"
-                            android:textColor="@color/white"
+                            android:textColor="@color/black"
                             android:padding="8dp"/>
 
                         <TextView
@@ -236,7 +238,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/min_c"
-                            android:textColor="@color/white"
+                            android:textColor="@color/black"
                             android:padding="8dp"/>
                     </LinearLayout>
 
@@ -245,7 +247,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/feels_like_c"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:gravity="center"
                         android:padding="8dp"/>
 
@@ -253,7 +255,7 @@
                         android:id="@+id/tvWind"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:text="@string/wind_km_h"
                         android:gravity="center"
                         android:padding="8dp"/>
