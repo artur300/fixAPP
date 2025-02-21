@@ -125,9 +125,4 @@
         <string name="weather_precipitation">Precipitation: %.1f mm</string>
         <string name="weather_visibility">Visibility: %.1f km</string>
 
-
-
-
-
-
 </resources>

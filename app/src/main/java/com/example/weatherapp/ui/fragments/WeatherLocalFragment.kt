@@ -163,15 +163,17 @@ class WeatherLocalFragment : Fragment() {
             val iconResult = WeatherIconProvider.getWeatherIcon(iconCode)
 
             with(binding) {
-                tvCity.text = it.name ?: "Unknown City"
-                tvTemperature.text = String.format(Locale.US, "%.0f°C", it.main?.temp ?: 0f)
-                tvDescriptionWeather.text = it.weather?.get(0)?.description ?: "No description available"
-                tvMinTemperature.text = String.format(Locale.US, "Min: %.0f°C", it.main?.temp_min ?: 0f)
-                tvMaxTemperature.text = String.format(Locale.US, "Max: %.0f°C", it.main?.temp_max ?: 0f)
-                tvFeelsLike.text = String.format(Locale.US, "Feels like: %.0f°C", it.main?.feels_like ?: 0f)
-                tvWind.text = String.format(Locale.US, "Wind: %.1f m/s", it.wind?.speed ?: 0f)
+                tvCity.text = it.name ?: getString(R.string.city_n_a)
+                tvTemperature.text = getString(R.string.weather_temp, (it.main?.temp ?: 0.0).toFloat())
+                tvDescriptionWeather.text = it.weather?.get(0)?.description ?: getString(R.string.weather_description_n_a)
+                tvMinTemperature.text = getString(R.string.weather_min_temp, (it.main?.temp_min ?: 0.0).toFloat())
+                tvMaxTemperature.text = getString(R.string.weather_max_temp, (it.main?.temp_max ?: 0.0).toFloat())
+                tvFeelsLike.text = getString(R.string.weather_feels_like, (it.main?.feels_like ?: 0.0).toFloat())
+                tvWind.text = getString(R.string.weather_wind_speed, (it.wind?.speed ?: 0.0).toFloat())
                 ivIconWeather.setImageResource(iconResult)
             }
         }
     }
+
+
 }
