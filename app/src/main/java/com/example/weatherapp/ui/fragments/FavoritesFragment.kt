@@ -7,16 +7,19 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.navigation.NavOptions
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.viewModelScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.weatherapp.Animations.Click_button_animation
+import com.example.weatherapp.R
 import com.example.weatherapp.adapters.FavoriteWeatherAdapter
 import com.example.weatherapp.databinding.FragmentFavoritesBinding
 import com.example.weatherapp.ui.CitySearchViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import il.co.syntax.fullarchitectureretrofithiltkotlin.utils.autoCleared
-import androidx.navigation.fragment.findNavController
-import com.example.weatherapp.Animations.Click_button_animation
-import com.example.weatherapp.R
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class FavoritesFragment : Fragment() {
@@ -38,9 +41,18 @@ class FavoritesFragment : Fragment() {
 
         setupRecyclerView()
         observeFavorites()
-        refreshFavoriteWeather() // ✅ טוען נתונים מיד עם הכניסה
+        showToast(getString(R.string.loading_favorites))
+        binding.progressBar.visibility = View.VISIBLE
+        binding.rvFavorites.visibility = View.GONE
 
-//--------------------sort----------------------
+        viewLifecycleOwner.lifecycleScope.launch {
+            delay(300)
+            refreshFavoriteWeather()
+        }
+
+
+
+        //-------------------- מיון נתונים ----------------------
         var isAscending = true
         binding.btnSortTemperature.setOnClickListener {
             favoriteAdapter.sortFavoritesByTemperature(isAscending)
@@ -52,8 +64,8 @@ class FavoritesFragment : Fragment() {
             favoriteAdapter.sortFavoritesByCityName(isCityNameAscending)
             isCityNameAscending = !isCityNameAscending
         }
+        //-------------------------------------------------------
 
-//--------------------sort----------------------
         binding.btnHome.setOnClickListener {
             Click_button_animation.scaleView(it) {
                 findNavController().popBackStack(R.id.weatherLocalFragment, false)
@@ -74,30 +86,44 @@ class FavoritesFragment : Fragment() {
 
     private fun observeFavorites() {
         viewModel.favoriteWeatherList.observe(viewLifecycleOwner) { favorites ->
-            binding.progressBar.visibility = View.GONE // ✅ הסתרת הטעינה כשהנתונים מוכנים
-            binding.rvFavorites.visibility = View.VISIBLE // ✅ הצגת הרשימה
 
-            // ✅ הוספת אנימציה לרשימה אחרי טעינה
-            binding.rvFavorites.alpha = 0f
-            binding.rvFavorites.animate().alpha(1f).setDuration(500).start()
+            if (favorites.isEmpty()) {
+                binding.progressBar.visibility = View.VISIBLE
+                binding.rvFavorites.visibility = View.GONE
+            } else {
+                binding.progressBar.visibility = View.GONE
+                binding.rvFavorites.visibility = View.VISIBLE
 
-            favoriteAdapter.submitList(favorites.distinctBy { "${it.cityName}, ${it.country}" })
+                //  אנימציה חלקה להצגת הרשימה
+                binding.rvFavorites.alpha = 0f
+                binding.rvFavorites.animate().alpha(1f).setDuration(500).start()
+
+                favoriteAdapter.submitList(favorites.distinctBy { "${it.cityName}, ${it.country}" })
+            }
         }
     }
 
     private fun refreshFavoriteWeather() {
-        binding.progressBar.visibility = View.VISIBLE // ✅ הצגת טעינה
-        binding.rvFavorites.visibility = View.GONE // ✅ הסתרת הרשימה כדי להרגיש שינוי
 
-        viewModel.refreshFavoriteWeather { success ->
-            binding.progressBar.visibility = View.GONE // ✅ הסתרת טעינה לאחר סיום
-            binding.rvFavorites.visibility = View.VISIBLE // ✅ הצגת הרשימה שוב
+        binding.progressBar.visibility = View.VISIBLE
+        binding.rvFavorites.visibility = View.GONE
 
-            if (!success) {
-                Toast.makeText(requireContext(), getString(R.string.error_refresh_favorites), Toast.LENGTH_SHORT).show()
+        viewModel.viewModelScope.launch {
+            delay(800) //  מבטיח שה-progressBar יופיע לפחות 800ms
+
+            viewModel.refreshFavoriteWeather { success ->
+                binding.progressBar.visibility = View.GONE
+                binding.rvFavorites.visibility = View.VISIBLE
+
+                if (!success) {
+                    Toast.makeText(requireContext(), getString(R.string.error_refresh_favorites), Toast.LENGTH_SHORT).show()
+                }
             }
         }
     }
-}
+    private fun showToast(message: String) {
+        Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
+    }
 
+}
 

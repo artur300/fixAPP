@@ -128,7 +128,10 @@
     <string name="weather_precipitation">משקעים: %.1f מ״מ</string>
     <string name="weather_visibility">ראות: %.1f ק״מ</string>
 
-
-
+    <!-- FavoritesFragment -->
+    <string name="no_favorites_found">לא נמצאו מועדפים</string>
+    <string name="refreshing_weather">מרענן את נתוני מזג האוויר…</string>
+    <string name="refresh_success">הרענון הסתיים בהצלחה!</string>
+    <string name="loading_favorites">טוען רשימת מועדפים…</string>
 
 </resources>

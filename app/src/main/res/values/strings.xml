@@ -126,4 +126,10 @@
         <string name="weather_precipitation">Precipitation: %.1f mm</string>
         <string name="weather_visibility">Visibility: %.1f km</string>
 
+
+    <string name="no_favorites_found">No favorites found</string>
+    <string name="refreshing_weather">Refreshing weather data…</string>
+    <string name="refresh_success"> Refresh successful!</string>
+    <string name="loading_favorites">Loading favorites list…</string>
+
 </resources>
