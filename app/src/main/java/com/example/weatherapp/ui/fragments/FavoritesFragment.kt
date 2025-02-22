@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.NavOptions
@@ -22,10 +23,8 @@ class FavoritesFragment : Fragment() {
 
     //  מחזיק את הביינדינג לעבודה עם ה-UI
     private var binding: FragmentFavoritesBinding by autoCleared()
-
     //  ViewModel שמנהל את נתוני המועדפים
     private val viewModel: CitySearchViewModel by viewModels()
-
     //  מתאם (Adapter) לרשימת הערים המועדפות
     private lateinit var favoriteAdapter: FavoriteWeatherAdapter
 
@@ -103,11 +102,9 @@ class FavoritesFragment : Fragment() {
             binding.progressBar.visibility = View.GONE // הסתרת progressBar לאחר סיום העדכון
 
             if (!success) {
-                //  אם הרענון נכשל, ניתן להוסיף הודעת שגיאה למשתמש
-            }
+                Toast.makeText(requireContext(), getString(R.string.error_refresh_favorites), Toast.LENGTH_SHORT).show()            }
         }
     }
-
 
     //------edit card text-----------------------
 

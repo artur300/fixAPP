@@ -175,8 +175,12 @@ class WeatherLocalFragment : Fragment() {
                 tvMaxTemperature.text = getString(R.string.weather_max_temp, (it.main?.temp_max ?: 0.0).toFloat())
                 tvFeelsLike.text = getString(R.string.weather_feels_like, (it.main?.feels_like ?: 0.0).toFloat())
                 tvWind.text = getString(R.string.weather_wind_speed, (it.wind?.speed ?: 0.0).toFloat())
-                ivIconWeather.setImageResource(iconResult)
 
+                //----IMAGE------
+                Glide.with(requireContext())
+                    .load(iconResult)
+                    .into(ivIconWeather)
+                //----IMAGE------
 
 
 
@@ -191,13 +195,9 @@ class WeatherLocalFragment : Fragment() {
                 )
                 gradientDrawable.cornerRadius = 50f  // עיגול פינות
                 binding.cardView.background = gradientDrawable
-
                 cardView.background = gradientDrawable
-
 
             }
         }
     }
-
-
 }

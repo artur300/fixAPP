@@ -44,6 +44,8 @@
     <string name="favorite_added">%1$s נוספה למועדפים!</string>
     <string name="favorite_list_title">רשימת מועדפים</string>
     <string name="Refresh">רענן</string>
+    <string name="error_refresh_favorites">לא ניתן לרענן את רשימת המועדפים. נסה שוב מאוחר יותר.</string>
+
 
     <!-- Dashboard -->
     <string name="search_city">חיפוש עיר</string>

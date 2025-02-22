@@ -131,12 +131,6 @@ class WeatherViewModel @Inject constructor(
     }
 
 
-
-
-
-
-
-
     // בשביל להציג דף של ירין
     fun getWeatherByCity(city: String, country: String) {
         weatherData.postValue(Resource.Loading())

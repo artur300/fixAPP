@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.weatherapp.databinding.ForecastViewholderBinding
 import com.example.weatherapp.models.forecast.ForecastResponse
 import com.example.weatherapp.util.WeatherIconProvider
@@ -63,8 +64,13 @@ class ForecastAdapter : RecyclerView.Adapter<ForecastAdapter.WeatherViewHolder>(
             tvDay.text = dayOfWeek
             tvHour.text = String.format("%02d:00", hour)
             tvTemperature.text = String.format(Locale.US, "%.1f°C", temperatureCelsius)
-            imgWeatherIcon.setImageResource(iconResult)
+            //----IMAGE------
+            Glide.with(holder.itemView.context)
+                .load(iconResult)
+                .into(holder.binding.imgWeatherIcon)
+            //----IMAGE------
         }
+
     }
 
 

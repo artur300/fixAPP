@@ -15,6 +15,7 @@ import com.example.weatherapp.util.WeatherIconProvider
 import com.example.weatherapp.util.convertUnixToTime
 import androidx.navigation.findNavController
 import android.os.Bundle
+import com.bumptech.glide.Glide
 import java.util.Locale
 
 class FavoriteWeatherAdapter(
@@ -52,8 +53,15 @@ class FavoriteWeatherAdapter(
                 tvSunrise.text = itemView.context.getString(R.string.label_sunrise, convertUnixToTime(favorite.sunrise, favorite.timezone))
                 tvSunset.text = itemView.context.getString(R.string.label_sunset, convertUnixToTime(favorite.sunset, favorite.timezone))
 
+
+                //----IMAGE------
                 val iconRes = WeatherIconProvider.getWeatherIcon(favorite.iconCode)
-                ivWeatherIcon.setImageResource(iconRes)
+                Glide.with(itemView.context)
+                    .load(iconRes)
+                    .into(ivWeatherIcon)
+                //----IMAGE------
+
+
 
                 val (startColor, endColor) = WeatherIconProvider.getWeatherCardGradient(favorite.iconCode)
                 val gradientDrawable = android.graphics.drawable.GradientDrawable(

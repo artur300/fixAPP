@@ -12,6 +12,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.NavOptions
+import com.bumptech.glide.Glide
 import com.example.weatherapp.Animations.Click_button_animation
 import com.example.weatherapp.R
 import com.example.weatherapp.adapters.CityAutoCompleteAdapter
@@ -124,8 +125,14 @@ class CitySearchFragment : Fragment() {
             tvWeatherDescription.text = getString(R.string.label_weather_description, weather?.weather?.firstOrNull()?.description ?: "--")
 
             val iconCode = weather?.weather?.firstOrNull()?.icon
-            val iconRes = WeatherIconProvider.getWeatherIcon(iconCode) // קריאה ישירה מה-WeatherIconProvider
-            ivWeatherIcon.setImageResource(iconRes)
+            val iconRes = WeatherIconProvider.getWeatherIcon(iconCode)
+
+            //----IMAGE------
+            Glide.with(requireContext())
+                .load(iconRes)
+                .into(binding.ivWeatherIcon)
+            //----IMAGE------
+
 
         }
     }
@@ -197,8 +204,6 @@ class CitySearchFragment : Fragment() {
             }
         }
     }
-
-
 
 }
 

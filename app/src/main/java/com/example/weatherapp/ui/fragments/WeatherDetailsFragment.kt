@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.bumptech.glide.Glide
 import com.example.weatherapp.Animations.Click_button_animation
 import com.example.weatherapp.R
 import com.example.weatherapp.adapters.ForecastAdapter
@@ -86,7 +87,13 @@ class WeatherDetailsFragment : Fragment() {
                             tvSunset.text = getString(R.string.weather_sunset, convertUnixToTime(weather.sys.sunset, weather.timezone))
                             tvWeatherDescription.text = weather.weather.firstOrNull()?.description ?: "--"
                             val iconCode = weather.weather.firstOrNull()?.icon
-                            ivWeatherIcon.setImageResource(WeatherIconProvider.getWeatherIcon(iconCode))
+
+                            //----IMAGE------
+                            Glide.with(requireContext())
+                                .load(WeatherIconProvider.getWeatherIcon(iconCode))
+                                .into(ivWeatherIcon)
+                            //----IMAGE------
+
                             tvMinMax.text = getString(R.string.weather_max_temp, weather.main.temp_max) + " • " + getString(R.string.weather_min_temp, weather.main.temp_min)
                             tvPrecipitation.text = getString(R.string.weather_precipitation, weather.rain?.oneHour ?: 0.0)
                             tvVisibility.text = getString(R.string.weather_visibility, (weather.visibility ?: 0) / 1000.0)

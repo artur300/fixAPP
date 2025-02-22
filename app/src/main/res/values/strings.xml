@@ -44,6 +44,7 @@
     <string name="favorite_added">%1$s has been added to favorites!</string>
     <string name="favorite_list_title">Favorite List</string>
     <string name="Refresh">Refresh</string>
+    <string name="error_refresh_favorites">Unable to refresh favorites list. Please try again later.</string>
 
 
     <!-- Dashboard -->
