@@ -3,6 +3,8 @@ package com.example.weatherapp.adapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.recyclerview.widget.AsyncListDiffer
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.weatherapp.Animations.Click_button_animation
 import com.example.weatherapp.R
@@ -13,7 +15,6 @@ import com.example.weatherapp.util.WeatherIconProvider
 import com.example.weatherapp.util.convertUnixToTime
 import androidx.navigation.findNavController
 import android.os.Bundle
-import androidx.navigation.fragment.findNavController
 import java.util.Locale
 
 class FavoriteWeatherAdapter(
@@ -21,7 +22,17 @@ class FavoriteWeatherAdapter(
     private val onDeleteClick: (FavoriteWeather) -> Unit
 ) : RecyclerView.Adapter<FavoriteWeatherAdapter.FavoriteViewHolder>() {
 
-    private var favorites: List<FavoriteWeather> = emptyList()
+    private val differCallback = object : DiffUtil.ItemCallback<FavoriteWeather>() {
+        override fun areItemsTheSame(oldItem: FavoriteWeather, newItem: FavoriteWeather): Boolean {
+            return oldItem.cityName == newItem.cityName && oldItem.country == newItem.country
+        }
+
+        override fun areContentsTheSame(oldItem: FavoriteWeather, newItem: FavoriteWeather): Boolean {
+            return oldItem == newItem
+        }
+    }
+
+    private val differ = AsyncListDiffer(this, differCallback)
 
     inner class FavoriteViewHolder(private val binding: ItemFavoriteWeatherBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -56,16 +67,16 @@ class FavoriteWeatherAdapter(
                 XmlWeatherListCard.background = gradientDrawable
 
                 etUserNote.setText(favorite.userNote ?: "")
-                etUserNote.isEnabled = false // ברירת מחדל: שדה ההערה לא ניתן לעריכה
+                etUserNote.isEnabled = false
 
                 btnEditNote.setOnClickListener { view ->
-                    Click_button_animation.scaleView(view) { // הוספת אנימציה
+                    Click_button_animation.scaleView(view) {
                         toggleEditMode()
                     }
                 }
 
                 btnSaveNote.setOnClickListener { view ->
-                    Click_button_animation.scaleView(view) { // הוספת אנימציה
+                    Click_button_animation.scaleView(view) {
                         val newNote = etUserNote.text.toString()
                         viewModel.updateFavoriteNote(favorite.cityName, favorite.country, newNote)
 
@@ -78,9 +89,9 @@ class FavoriteWeatherAdapter(
                 ivDeleteFavorite.setOnClickListener { view ->
                     Click_button_animation.scaleView(view) {
                         onDeleteClick(favorite)
+                        deleteItem(favorite)
                     }
                 }
-
 
                 var isNavigating = false
                 binding.btnDetails.setOnClickListener { view ->
@@ -96,7 +107,6 @@ class FavoriteWeatherAdapter(
                         }
                     }
                 }
-
             }
         }
 
@@ -115,52 +125,38 @@ class FavoriteWeatherAdapter(
     }
 
     override fun onBindViewHolder(holder: FavoriteViewHolder, position: Int) {
-        holder.bind(favorites[position])
+        holder.bind(differ.currentList[position])
     }
 
-    override fun getItemCount() = favorites.size
+    override fun getItemCount() = differ.currentList.size
 
     fun submitList(newList: List<FavoriteWeather>) {
-        favorites = newList
-        notifyDataSetChanged()
+        differ.submitList(newList)
     }
 
+    fun deleteItem(favorite: FavoriteWeather) {
+        val updatedList = differ.currentList.toMutableList()
+        updatedList.remove(favorite)
+        submitList(updatedList)
+    }
 
-
-
-
-
-
-
-
-
-
-
-//-------------sort functions-------------
     fun sortFavoritesByTemperature(ascending: Boolean) {
-        favorites = if (ascending) {
-            favorites.sortedBy { it.temperature ?: Double.MIN_VALUE }
+        val sortedList = if (ascending) {
+            differ.currentList.sortedBy { it.temperature ?: Double.MIN_VALUE }
         } else {
-            favorites.sortedByDescending { it.temperature ?: Double.MIN_VALUE }
+            differ.currentList.sortedByDescending { it.temperature ?: Double.MIN_VALUE }
         }
-        notifyDataSetChanged()
+        submitList(sortedList)
     }
 
     fun sortFavoritesByCityName(ascending: Boolean) {
-        favorites = if (ascending) {
-            favorites.sortedBy { it.cityName.lowercase() }
+        val sortedList = if (ascending) {
+            differ.currentList.sortedBy { it.cityName.lowercase() }
         } else {
-            favorites.sortedByDescending { it.cityName.lowercase() }
+            differ.currentList.sortedByDescending { it.cityName.lowercase() }
         }
-        notifyDataSetChanged()
+        submitList(sortedList)
     }
-
-
-
-
-
-
-
-
 }
+
 
