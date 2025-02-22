@@ -206,6 +206,5 @@ class CitySearchViewModel @Inject constructor(
         }
     }
 
-
 }
 
