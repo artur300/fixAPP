@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#C0DCDC"
+    android:background="@drawable/bg_weather_gradient"
     android:fitsSystemWindows="true"
     tools:context=".ui.fragments.WeatherLocalFragment">
 
@@ -13,7 +13,7 @@
         android:id="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:background="@color/dark_cyan">
+        android:background="@color/black">
 
         <TextView
             android:id="@+id/header_title"
@@ -38,7 +38,7 @@
         android:id="@+id/custom_toolbar"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:background="@color/black"
+        android:background="@color/blueGradientStart"
         android:padding="10dp"
         android:gravity="center_vertical"
         android:orientation="horizontal">
@@ -162,7 +162,7 @@
                 android:layout_height="wrap_content"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="6dp"
-                app:cardBackgroundColor="@color/dark_cyan"
+                app:cardBackgroundColor="@color/white"
                 android:padding="16dp"
                 android:layout_marginBottom="10dp"
                 >
@@ -274,7 +274,7 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardBackgroundColor="@color/dark_cyan"
+                app:cardBackgroundColor="@color/black"
 
                 app:cardCornerRadius="12dp">
 

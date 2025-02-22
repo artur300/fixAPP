@@ -4,14 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#C0DCDC"
+    android:background="@drawable/bg_weather_gradient"
     android:fitsSystemWindows="true">
 
     <RelativeLayout
         android:id="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:background="@color/dark_cyan">
+        android:background="@color/black">
 
         <ImageView
             android:id="@+id/btnHome"
@@ -55,6 +55,7 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/enter_city_name"
                 android:inputType="text"
+                android:textColor="@color/white"
                 android:completionThreshold="2"
                 android:layout_marginBottom="8dp"/>
 
@@ -65,7 +66,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/search"
                 android:layout_gravity="center"
-                android:backgroundTint="@color/dark_cyan"
+                android:backgroundTint="@color/black"
                 android:layout_marginBottom="16dp"/>
 
             <!-- כרטיסיית מזג אוויר -->
@@ -75,7 +76,7 @@
                 android:layout_margin="8dp"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="6dp"
-                app:cardBackgroundColor="@color/dark_cyan">
+                app:cardBackgroundColor="@color/black">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -90,7 +91,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/city_n_a"
-                        android:textColor="@color/bright_cyan"
+                        android:textColor="@color/white"
                         android:textSize="28sp"
                         android:textStyle="bold"
                         android:gravity="center"/>
@@ -101,7 +102,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/country_n_a"
-                        android:textColor="@color/bright_cyan"
+                        android:textColor="@color/white"
                         android:textSize="22sp"
                         android:textStyle="bold"
                         android:gravity="center"/>
@@ -112,14 +113,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/weather_description_n_a"
-                        android:textColor="@color/bright_cyan"
+                        android:textColor="@color/white"
                         android:textSize="18sp"
                         android:gravity="center"/>
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="2dp"
-                        android:background="@color/bright_cyan"
+                        android:background="@color/white"
                         android:layout_marginTop="8dp"
                         android:layout_marginBottom="8dp"/>
 
@@ -139,7 +140,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/temperature_n_a"
-                        android:textColor="@color/bright_cyan"
+                        android:textColor="@color/white"
                         android:textSize="50sp"
                         android:textStyle="bold"
                         android:layout_gravity="center"/>
@@ -147,7 +148,7 @@
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:background="@color/bright_cyan"
+                        android:background="@color/white"
                         android:layout_marginTop="8dp"
                         android:layout_marginBottom="8dp"/>
 
@@ -156,14 +157,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/feels_like_n_a"
-                        android:textColor="@color/bright_cyan"
+                        android:textColor="@color/white"
                         android:textSize="18sp"
                         android:layout_gravity="center"/>
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:background="@color/bright_cyan"
+                        android:background="@color/white"
                         android:layout_marginTop="8dp"
                         android:layout_marginBottom="8dp"/>
 
@@ -178,7 +179,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:text="@string/sunrise_n_a"
-                            android:textColor="@color/bright_cyan"
+                            android:textColor="@color/white"
                             android:textSize="16sp"
                             android:layout_weight="1"
                             android:gravity="start"/>
@@ -188,7 +189,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:text="@string/sunset_n_a"
-                            android:textColor="@color/bright_cyan"
+                            android:textColor="@color/white"
                             android:textSize="16sp"
                             android:layout_weight="1"
                             android:gravity="end"/>
@@ -197,7 +198,7 @@
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:background="@color/bright_cyan"
+                        android:background="@color/white"
                         android:layout_marginTop="8dp"
                         android:layout_marginBottom="8dp"/>
 
@@ -212,7 +213,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:text="@string/humidity_n_a"
-                            android:textColor="@color/bright_cyan"
+                            android:textColor="@color/white"
                             android:textSize="16sp"
                             android:layout_weight="1"
                             android:gravity="start"/>
@@ -222,7 +223,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:text="@string/wind_speed_n_a"
-                            android:textColor="@color/bright_cyan"
+                            android:textColor="@color/white"
                             android:textSize="16sp"
                             android:layout_weight="1"
                             android:gravity="end"/>
@@ -235,7 +236,7 @@
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:background="@color/bright_cyan"
+                        android:background="@color/white"
                         android:layout_marginTop="8dp"
                         android:layout_marginBottom="20dp"/>
 
@@ -259,7 +260,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/details"
                 android:layout_gravity="center"
-                android:backgroundTint="@color/dark_cyan"
+                android:backgroundTint="@color/black"
                 android:layout_marginBottom="16dp"/>
             <!-- ProgressBar -->
             <ProgressBar
